@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table,table td{
+	border:solid 1px blue;
+	
+}
+
+</style>
+</head>
+<body>
+<script type="text/javascript">
+//1.js的语法。
+/*
+	程序设计语言：
+	1，标识符
+	2.注释。
+	3.常量变量
+	4.运算符
+	5.语句
+	6.函数
+	7.数组。
+*/
+//变量。关键字完成，没有明显类型，有隐类型
+/*
+	var x='4';
+	x=9;
+	x="abc";
+	x="true";
+	x="haha";
+	alert("x="+x)
+*/
+/* 
+	var y;
+	alert("y="+y);y=undefined
+*/
+//alert(3140/1000*1000);//3140
+//alert(2.4+4.6);//7
+
+//alert("12"+1);//121
+//alert(12+1);//13
+//alert("qq"+1);//qq1
+//alert(qq+1);//不行
+//alert("12"-1);//11
+//alert(12-1);//11
+//alert("qq"-1);//NAN
+//alert(qq-1);//不行
+//alert("a"-1);//NAN
+
+//alert(typeof(123));//number
+//alert(typeof(3.45));//number
+//alert(typeof("abc"));//string
+//alert(typeof(true)=="boolean");//boolean
+//alert(typeof(false));//boolean
+
+//alert(true+2);//3;非0非null就是true。默认1
+//alert(false+2);//2;false就是0或者null（空）
+
+
+//语句。
+//if。
+/*
+	var x=3;
+	if(x=3){//对数值判断时，将常量放左边，如果此时if后面是4=x ,
+		// 则不能运算，不能给 number赋值。
+		alert("yes");
+	}else{
+		alert("no");
+	}
+	//弹出yes
+*/
+/*
+	var x=1;
+	if(x= 6){
+		alert(x);
+	}else{
+		alert("no");
+	}//弹出yes*/
+	//只要if后面的x不等于0，弹出的都是yes
+
+	//如果将if后面的x=0，将弹出no，只要if后面的x=0，弹出的都是no，不管var后面的x赋的是数字或字母。
+
+//switch与java一致。
+//循环。
+/*
+	var x=1;
+	while(x<3){
+		alert("x="+x);
+	}//一旦运行，停不下来。只能结束进程，要控制循环次数。
+*/
+/*
+	var x=1;
+	while(x<3){
+		alert("x="+x);
+		x++; //结束进程
+	}//弹出x=1，和x=2
+*/
+/*
+	for(var x=0;x<3;x++){
+		alert("x="+x);
+	}//依次弹出x=0，x=1,x=2。
+*/
+//system.out.printin("hello world");
+//document.write("hello world");
+//九九乘法表
+/*
+ for(var x=1;x<=9;x++){
+		for(var y=1;y<=x;y++){
+			document.write(y+"*"+x+"="+y*x+" ")
+		}
+		document.write("<br/>");
+	}
+ */
+ document.write("<table>");
+ for(var x=1;x<=9;x++){
+ 	document.write("<tr>");
+ 	for(var y=1;y<=x;y++){
+ 		document.write("<td>"+y+"*"+x+"="+y*x+"</td>");
+ 	}
+ 	document.write("</tr>");
+ }
+ document.write("</table>"); 
+/*	var x=1;
+	if(x= 0){
+		document.write("x="+x);
+	}else{
+		alert("no");
+	}*/	
+	
+</script>
+</body>
+</html>

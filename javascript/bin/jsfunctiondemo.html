@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//js中的函数。
+//通过关键字function定义。
+/*function show(){
+	alert("show run");
+}
+
+show();
+*/
+/*function showparam(x,y){
+	
+	//函数内部内置了一个参数数组，内部存储的都是传递进来的实参。arguments
+	
+	alert(x+"...."+y);
+}
+	showparam(3,4);
+*/
+/*
+function showparam(x){
+	for(var x=3;x<arguments.length;x++)
+	alert(arguments[x]);
+}
+	//注意：一般定义时，有几个参数就传递几个参数。
+	showparam(3,4,5,6);
+*/	
+
+
+/*
+function showvalue(x,y){
+	return x+y;
+	//alert(x+y);
+}
+	//showvalue(5,9);
+	var sum=showvalue(5,9);
+	alert(sum)
+*/
+/*
+function showvalue(){
+		return 10;
+	
+	}
+	//js中的函数在内存中其实是一个function类型的对象，而函数名其实就是该对象的引用。	
+	//var sum=showvalue();//调用show value函数，并用sum变量接收该函数运算完的结果。
+	var sum=showvalue;//将showvalue引用的地址赋值给sum。sum也就指向了该函数对象。
+	alert("sum="+sum());//sum=10;
+	alert("sum="+sum)//将sum指向的函数对象转成字符串，
+	//就是调用对象的tostring（））函数对象的字符表现形式就是定义的函数表象形式。
+	*/
+	
+	
+	
+	
+	
+	
+//动态函数：其实是使用了js中内置的对象function完成的函数建立。
+//var func = new Function ("x,y","var sum=x+y;return sum;");//这就是在创建函数对象。
+//动态函数和该函数的功能一致。
+//1.
+/* 
+function func(x,y){
+	return x+y;
+}
+
+	alert("sum="+func(5,8));
+	
+*/
+//2.
+/*
+function func(x,y){
+	var sum=x+y;
+	return sum
+}	
+	var sum=func(5,8);
+	alert("sum="+sum);
+*/
+//1与2运行结果是一样的，只是2写的比1多，复杂
+
+
+//匿名函数。没有名字，函数的简写。一般用于给事件定义功能，便于简化。
+
+//1.
+/*
+var abc=function(){
+	alert("over");
+}
+abc();
+*/
+//2.
+/*
+function abc(){
+	alert("over")
+}
+	abc();
+*/
+
+//变量的作用域。只要是在script标签中直接定义的变量都是全局的，都可以访问。
+//var num=5;
+
+//for(var n=0;n<5;n++){//n变量也是全局的。
+//}
+//	alert(n);
+function showvar(){//函数定义变量就是局部变量，在函数内有效。
+	var k=9;
+}
+
+	//alert(k);
+/*	
+var m=4;
+function demo(m){
+	return 8;
+}
+	alert(demo(9));
+*/	
+	
+</script>
+<script type="text/javascript">
+
+//alert(num);
+//alert(n);
+//js中的数组
+/*
+ 特点：
+ 1.容器用于存储数据。
+ 2.长度是可变的。
+ 3.元素类型是任意的。
+ */
+//定义数组。
+/*
+var lmm=[3,6,8];
+//直接明确数组的长度和内容。
+
+
+function show(lmm){
+	var str="[";
+	for(var x=0;x<lmm.length;x++){
+		if(x!=lmm.length-1){
+			str+=lmm[x]+",";
+		}else{
+			str+=lmm[x]+"]";
+		}
+	}
+	println(str);
+}
+	function println(str){
+		document.write(str+"<br/>");
+	}
+ 		show(lmm);
+*/
+var arr=[3,6,8,9,10,11];
+//arr[5]="abcd";
+//arr[2]="ture";
+//println(arr.toString());
+
+	
+
+function showelement(arr){
+	var str="{";
+	for(var x=0;x<arr.length;x++){
+		if(x!=arr.length-1){
+			
+			str+=arr[x]+",";
+		}else{
+			str+=arr[x]+"}";
+		}
+	}
+	println(str);
+}
+showelement(arr);	 
+function println(str){
+	document.write(str);
+}
+		
+//数组的另一种定义方式。使用array完成的。
+//var arr2=new Array();//var arr2=[];
+//以上均表示new了一个长度为0的数组.
+
+//var arr2=new Array(3);//		
+//括号内写3，则表示new了一个长度为3的数组.		
+
+//var arr2=new Array(3,9);		
+//以上必表示这个数组里有两个元素3和9，长度为2.
+
+// 数组求最值。
+var strs=["abcd","aaa","cba","xixi","zz"];
+println(strs);
+sortArray(strs);
+
+function sortArray(strs){
+	
+for ( var x=0;x<strs.length-1;x++){
+	
+	for(var y=x+1;y<strs.length;y++){
+		
+		if(strs[x]>strs[y]){
+			
+			swap(strs,x,y);
+			}
+		}
+	}
+}
+function swap(strs,x,y){
+		var temp=strs[x];
+		strs[x]=strs[y];
+		strs[y]=temp;
+	}
+
+function println(str){
+	document.write(str+"<br/>");
+}
+</script>
+
+
+</body>
+</html>

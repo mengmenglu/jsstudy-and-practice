@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="arraytool.js"></script>
+<script type="text/javascript" src="stringtool.js"></script>
+<script type="text/javascript">
+//原型的使用。
+var arr=[43,120,30,78,35,22];
+
+/*
+function getMax(arr){
+	var max=0;
+	for(var x=1;x<arr.length;x++){
+		if(arr[x]>arr[max]){
+			max=x;
+		}
+	}
+	return arr[max];
+}
+	var max=getMax(arr);
+	
+*/
+
+
+
+//既然是用于操作数组对象的方法，可不可以直接将这个方法定义到数组对象中。
+//这样所有的数组对象都可以使用这个方法。
+//通过原型属性的方式。Array.prototype相当于获取到了数组的夫类的对象的引用。
+
+var max=arr.getMax();
+
+	println("max="+max);
+	
+	function println(str){
+		document.write(str+"<br/>");
+	}
+	
+	var str="     ab  c    ";
+	//println("-"+str+"--");
+	
+	alert("-"+str.trim()+"-");
+	
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
