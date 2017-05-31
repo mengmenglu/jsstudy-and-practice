@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+//按照面形对象思想编写javascript。
+// 1. 对对象描述。java中使用class，js中可以使用function来完成。
+//描述person。
+/*
+function Person(){//相当于构造函数。
+	alert("person run");
+}
+//通过new关键字创建对象。
+
+var p=new Person();
+
+p.name="lisi";//给p对象添加了一个name属性。值为lisi。
+p.age=20;
+p.show=function(){
+	alert(this.name+":"+this.age);
+}
+p.show();
+*/
+//name,age,show这些成员只有p对象有。要想让其他person对象都具备，可以将这些属性定义到描述中。
+
+function Person(name,age){
+	this.name=name;
+	this.age=age
+	
+	this.setName=function(name){
+		this.name=name;
+	};
+	this.getName=function(){
+		return this.name;
+	};
+}
+//给person对象添加新功能，使用原型。
+Person.prototype.toString=function(){
+	return"Person[name="+this.name+",age="+this.age+"]";
+};
+
+var p1=new Person("lisis",29);
+p1.setName("wangcai");
+//alert(p1.getName());
+
+//alert(p1.toString());
+var p2=new Person("xiaoqiang",29);
+//alert(p2);
+
+
+
+/*
+ with(对象){简化书写用。
+	直接使用对象中的方法。
+}
+对象名.成员；
+对象名.成员；
+对象名.成员；
+with.(对象名){
+	成员。
+}
+ */
+
+ /*
+ //p1.setName();
+ //p1.getName();
+ //with(p1){
+	 setName("b");
+	 getName();
+ }
+*/
+
+/*
+ for(变量in对象){
+	 
+ }
+ 用于遍历对象和数组。
+ */
+for(x in p1){//遍历p1的所有成员。
+	alert(x+":"+p1[x]);
+}
+
+//对象调用成员有两种方式。一，p1.name  二，p1["name"]
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
